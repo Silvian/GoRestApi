@@ -7,7 +7,7 @@ import (
 )
 
 func OpenDatabaseConnection() {
-   fmt.Print("Initiate database")
+   fmt.Println("Initiate database")
 
    db, err := sql.Open("mysql", "root:root@tcp(0.0.0.0:3306)/testdb")
 
@@ -17,5 +17,5 @@ func OpenDatabaseConnection() {
 
    defer db.Close()
 
-   fmt.Print("Successfully connected to the database")
+   fmt.Println("Successfully connected to the database")
 }
