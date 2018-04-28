@@ -6,6 +6,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/Silvian/GoRestApi/api"
+	"github.com/Silvian/GoRestApi/db"
 )
 
 func main() {
@@ -21,6 +22,8 @@ func main() {
 	router.HandleFunc("/api/books", api.CreateBook).Methods("POST")
 	router.HandleFunc("/api/books/{id}", api.UpdateBook).Methods("PUT")
 	router.HandleFunc("/api/books/{id}", api.DeleteBook).Methods("DELETE")
+
+	db.OpenDatabaseConnection()
 
 	server := http.ListenAndServe(":8080", router)
 	log.Fatal(server)
