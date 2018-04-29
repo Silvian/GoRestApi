@@ -6,19 +6,6 @@ import (
   _ "github.com/go-sql-driver/mysql"
 )
 
-func CreateUser() {
-
-  insert, err := db.Query("INSERT INTO users VALUES('Elliot', 'eliot@hacker.com')")
-
-  if err != nil {
-    panic(err.Error())
-  }
-
-  fmt.Println("Successfully inserted values in database")
-
-}
-
-
 func OpenDatabaseConnection() {
    fmt.Println("Initiate database")
 
