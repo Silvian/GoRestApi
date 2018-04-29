@@ -19,7 +19,7 @@ func OpenDatabaseConnection() {
 
    fmt.Println("Successfully connected to the database")
 
-   insert, err := db.Query("INSERT INTO users VALUES('Elliot', 'eliot@hacker.com');")
+   insert, err := db.Query("INSERT INTO users VALUES('Elliot', 'eliot@hacker.com')")
 
    if err != nil {
      panic(err.Error())
